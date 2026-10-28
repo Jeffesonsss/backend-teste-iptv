@@ -24,7 +24,7 @@ function saveDb(db){ fs.writeFileSync(DB_FILE, JSON.stringify(db,null,2)); }
 
 function genUser(deviceId){
   const h = crypto.createHash('md5').update(deviceId).digest('hex').slice(0,6);
-  return `tst_${h}`;
+  return `tst-${h}`;
 }
 function genPass(){
   return crypto.randomBytes(4).toString('hex');
